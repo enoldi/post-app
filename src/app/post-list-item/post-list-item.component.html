@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item': true, 'list-group-item-success': articlePost.loveIts > 0 , 'list-group-item-danger': articlePost.loveIts < 0}">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 style="margin-top: -7px;">{{ articlePost.title }}</h2>
+    </div>
+    <div class="col-md-4">
+      <strong class="pull-right hauteur-correct">{{ articlePost.created_at | date: 'dd/MM/yyyy, h:mm a' | uppercase }}</strong>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <P>{{ articlePost.content}}</P>
+    </div>
+  </div>
+  <button class="btn btn-success" (click)="onLoveIt()">love it</button> &nbsp;
+  <button class="btn btn-danger" (click)="onDontLoveIt()">don't love it</button>
+  <button class="btn btn-danger pull-right" (click)="onDeletePost(articlePost)">Supprimer</button>
+</li>
